@@ -2,29 +2,27 @@
 
   <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(236, 72, 153, 0.2); border-radius: 24px; padding: 40px 32px; max-width: 460px; width: 100%; text-align: center; backdrop-filter: blur(20px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);">
 
-    <!-- Avatar com upload -->
-    <label for="photoUpload" style="display: block; cursor: pointer; margin: 0 auto 20px; position: relative; width: 96px; height: 96px;">
-      <div id="avatarCircle" style="width: 96px; height: 96px; background: linear-gradient(135deg, #ec4899, #a855f7); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3); overflow: hidden; border: 3px solid rgba(255,255,255,0.1); transition: all 0.3s;">
-        <svg id="lockIcon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-        <img id="avatarImg" style="display:none; width: 100%; height: 100%; object-fit: cover;" />
+    <!-- Avatar da Lukie -->
+    <div style="display: block; margin: 0 auto 20px; position: relative; width: 96px; height: 96px;">
+      <div id="avatarCircle" style="width: 96px; height: 96px; background: linear-gradient(135deg, #ec4899, #a855f7); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3); overflow: hidden; border: 3px solid rgba(255,255,255,0.1);">
+        <img id="avatarImg" src="perfil lukie/FB.jpg" alt="Lukie" style="width: 100%; height: 100%; object-fit: cover;" />
       </div>
-      <div style="position: absolute; bottom: -2px; right: -2px; width: 28px; height: 28px; background: #ec4899; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #1a0a14;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-          <circle cx="12" cy="13" r="4"/>
-        </svg>
-      </div>
-      <input type="file" id="photoUpload" accept="image/*" style="display: none;" />
-    </label>
+    </div>
 
-    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 100px; padding: 6px 14px; margin-bottom: 16px;">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="20 6 9 17 4 12"/>
-      </svg>
-      <span style="color: #22c55e; font-size: 12px; font-weight: 600;">Pagamento confirmado</span>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-bottom: 16px;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 100px; padding: 6px 14px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span style="color: #22c55e; font-size: 12px; font-weight: 600;">Pagamento aprovado</span>
+      </div>
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(236, 72, 153, 0.1); border: 1px solid rgba(236, 72, 153, 0.3); border-radius: 100px; padding: 6px 14px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <span style="color: #ec4899; font-size: 12px; font-weight: 600;">Aprovação pendente</span>
+      </div>
     </div>
 
     <h1 style="color: #ffffff; font-size: 24px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.5px;">
@@ -50,11 +48,6 @@
 
     <!-- Feed de aprovações -->
     <div style="text-align: left; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
-        <div style="width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: pulse 1.5s ease-in-out infinite;"></div>
-        <span style="color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Aprovações em tempo real</span>
-      </div>
-
       <div id="feed" style="display: flex; flex-direction: column; gap: 10px; max-height: 240px; overflow: hidden; position: relative;">
         <!-- comentários inseridos via JS -->
       </div>
@@ -84,24 +77,6 @@
   </style>
 
   <script>
-    // Upload de foto
-    const photoUpload = document.getElementById('photoUpload');
-    const avatarImg = document.getElementById('avatarImg');
-    const lockIcon = document.getElementById('lockIcon');
-
-    photoUpload.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-          avatarImg.src = ev.target.result;
-          avatarImg.style.display = 'block';
-          lockIcon.style.display = 'none';
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
     // Nomes moçambicanos para feed fake
     const nomes = [
       'José', 'Nhatumbe', 'Carlos', 'Manuel', 'Pedro Macuácua', 'António',
@@ -127,6 +102,35 @@
       ['#f97316', '#eab308']
     ];
 
+    // Mapa de fotos reais por nome
+    const fotosReais = {
+      'José': 'fotos/jose.jpg',
+      'Nhatumbe': 'fotos/Nhatumbe.jpg',
+      'Carlos': 'fotos/Carlos.jpg',
+      'António': 'fotos/Antonio.jpg',
+      'Issufo': 'fotos/Issufo.jpg',
+      'Fernando': 'fotos/Fernando.jpg',
+      'Aníbal': 'fotos/Anibal.jpg',
+      'Rachide': 'fotos/Rachide.jpg',
+      'Mário Sitoe': 'fotos/Mario sitoe.jpg',
+      'Hélder': 'fotos/Helder.jpg',
+      'Tomás': 'fotos/Tomas.jpg',
+      'Custódio': 'fotos/Custodio.jpg',
+      'Bento': 'fotos/Bento.jpg',
+      'Armando': 'fotos/Armando.jpg',
+      'Nelson': 'fotos/Nelson.jpg',
+      'Júlio': 'fotos/Julio.jpg',
+      'Ricardo': 'fotos/Ricardo.jpg',
+      'Bruno Macamo': 'fotos/Bruno macamo.jpg',
+      'Felipe': 'fotos/Felipe.jpg',
+      'Jaime': 'fotos/Jaime.jpg',
+      'Salimo': 'fotos/Salimo.jpg',
+      'Adriano': 'fotos/Adriano.jpg',
+      'Rogério': 'fotos/Rogério.jpg',
+      'Ivan Mucavele': 'fotos/Ivan mucavele.jpg',
+      'Hélio': 'fotos/Helio.jpg'
+    };
+
     const feed = document.getElementById('feed');
     const usadosRecentes = [];
 
@@ -143,13 +147,19 @@
     function criarItem(nome, tempo) {
       const cor = cores[Math.floor(Math.random() * cores.length)];
       const inicial = nome.charAt(0).toUpperCase();
+      const fotoReal = fotosReais[nome];
+      const avatarHtml = fotoReal
+        ? `<div style="width: 32px; height: 32px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(255,255,255,0.1);">
+            <img src="${fotoReal}" alt="${nome}" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>`
+        : `<div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, ${cor[0]}, ${cor[1]}); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; font-weight: 700; flex-shrink: 0;">
+            ${inicial}
+          </div>`;
       const div = document.createElement('div');
       div.className = 'feed-item';
       div.style.cssText = 'display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: rgba(255,255,255,0.03); border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);';
       div.innerHTML = `
-        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, ${cor[0]}, ${cor[1]}); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; font-weight: 700; flex-shrink: 0;">
-          ${inicial}
-        </div>
+        ${avatarHtml}
         <div style="flex: 1; min-width: 0;">
           <p style="color: #fff; font-size: 13px; margin: 0; line-height: 1.3;">
             Lukie aprovou <strong style="color: #ec4899;">${nome}</strong>
